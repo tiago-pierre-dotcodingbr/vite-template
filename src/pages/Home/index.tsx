@@ -4,6 +4,7 @@ import * as S from './styles';
 import logo from '../../assets/images/logo.svg';
 
 export function Home() {
+    function teste() {}
     return (
         <S.Container>
             <S.Logo src={logo} />
