@@ -6,7 +6,7 @@ import { handleActions } from 'redux-actions';
 import { LOGOUT, UPDATE_USER, UPDATE_TOKEN } from './constants';
 
 const initialState = {
-    user: null,
+    user: 'Dotcoding',
     token: null,
 };
 
