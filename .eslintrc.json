@@ -1,50 +1,101 @@
-// build: Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm)
-// ci: Changes to our CI configuration files and scripts (example scopes: Travis, Circle, BrowserStack, SauceLabs)
-// docs: Documentation only changes
-// feat: A new feature
-// fix: A bug fix
-// perf: A code change that improves performance
-// refactor: A code change that neither fixes a bug nor adds a feature
-// style: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
-// test: Adding missing tests or correcting existing tests
-
-module.exports = {
-    extends: ['@commitlint/config-conventional'],
-    rules: {
-        'body-leading-blank': [1, 'always'],
-        'body-max-line-length': [2, 'always', 100],
-        'footer-leading-blank': [1, 'always'],
-        'footer-max-line-length': [2, 'always', 100],
-        'header-max-length': [2, 'always', 100],
-        'scope-case': [2, 'always', 'lower-case'],
-        'subject-case': [
-            2,
-            'never',
-            ['sentence-case', 'start-case', 'pascal-case', 'upper-case'],
-        ],
-        'subject-empty': [2, 'never'],
-        'subject-full-stop': [2, 'never', '.'],
-        'type-case': [2, 'always', 'lower-case'],
-        'type-empty': [2, 'never'],
-        'type-enum': [
-            2,
-            'always',
-            [
-                'build',
-                'chore',
-                'ci',
-                'docs',
-                'feat',
-                'fix',
-                'perf',
-                'refactor',
-                'revert',
-                'style',
-                'test',
-                'translation',
-                'security',
-                'changeset',
-            ],
-        ],
+{
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:jsx-a11y/recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:import/typescript",
+        "plugin:react/jsx-runtime",
+        "plugin:prettier/recommended",
+        "prettier"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": "latest",
+        "sourceType": "module"
     },
-};
+    "plugins": [
+        "react",
+        "@typescript-eslint",
+        "import",
+        "jsx-a11y",
+        "react-hooks",
+        "prettier"
+    ],
+    "rules": {
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/no-non-null-assertion": "off",
+        "@typescript-eslint/no-unused-vars": [
+            "warn",
+            {
+                "argsIgnorePattern": "^_",
+                "varsIgnorePattern": "^_",
+                "caughtErrorsIgnorePattern": "^_"
+            }
+        ],
+
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "warn",
+
+        "prettier/prettier": [
+            "warn",
+            {
+                "endOfLine": "auto",
+                "singleQuote": true
+            }
+        ],
+        "body-leading-blank": [1, "always"],
+        "body-max-line-length": [2, "always", 100],
+        "footer-leading-blank": [1, "always"],
+        "footer-max-line-length": [2, "always", 100],
+        "header-max-length": [2, "always", 100],
+        "scope-case": [2, "always", "lower-case"],
+        "subject-case": [
+            2,
+            "never",
+            ["sentence-case", "start-case", "pascal-case", "upper-case"]
+        ],
+        "subject-empty": [2, "never"],
+        "subject-full-stop": [2, "never", "."],
+        "type-case": [2, "always", "lower-case"],
+        "type-empty": [2, "never"],
+        "type-enum": [
+            2,
+            "always",
+            [
+                "build",
+                "chore",
+                "ci",
+                "docs",
+                "feat",
+                "fix",
+                "perf",
+                "refactor",
+                "revert",
+                "style",
+                "test",
+                "translation",
+                "security",
+                "changeset"
+            ]
+        ]
+    },
+    "overrides": [
+        {
+            "files": ["*.stories.@(ts|tsx|js|jsx|mjs|cjs)"],
+            "rules": {
+                // example of overriding a rule
+                "storybook/hierarchy-separator": "error",
+                "no-empty-function": [
+                    2,
+                    {
+                        "allow": ["constructors"]
+                    }
+                ]
+            }
+        }
+    ]
+}
