@@ -85,7 +85,7 @@
     },
     "overrides": [
         {
-            "files": ["*.stories.@(ts|tsx|js|jsx|mjs|cjs)"],
+            "files": ["*.tsx"],
             "rules": {
                 // example of overriding a rule
                 "storybook/hierarchy-separator": "error",
