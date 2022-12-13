@@ -15,7 +15,10 @@ export function Home() {
     return (
         <S.Container>
             <S.Logo src={logo} />
-            <S.Title>{user}</S.Title>
+            <S.TextContainer>
+                <S.Title>{user}</S.Title>
+                <S.Text>Template incial para novos projetos.</S.Text>
+            </S.TextContainer>
         </S.Container>
     );
 }

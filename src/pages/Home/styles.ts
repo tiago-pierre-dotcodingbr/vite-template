@@ -8,12 +8,16 @@ export const Container = styled.main`
     justify-content: center;
 `;
 
-export const Title = styled.h1`
-    margin-left: 40px;
+export const TextContainer = styled.div`
+    margin-left: 30px;
 `;
 
+export const Title = styled.h1``;
+
+export const Text = styled.p``;
+
 export const Logo = styled.img`
-    width: 100px;
-    padding-right: 30px;
+    width: 70px;
     border-right: 1px solid ${({ theme }) => theme.colors.purple};
+    padding-inline-end: 5px;
 `;
