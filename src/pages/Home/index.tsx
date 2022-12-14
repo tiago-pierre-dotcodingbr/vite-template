@@ -13,6 +13,7 @@ export function Home() {
     const user = useSelector((state: RootState) => state.user.user);
 
     function teste() {}
+    a;
 
     return (
         <S.Container>
