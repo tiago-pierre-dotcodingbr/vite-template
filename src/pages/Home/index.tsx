@@ -12,7 +12,9 @@ import { RootState } from '../../store';
 export function Home() {
     const user = useSelector((state: RootState) => state.user.user);
 
-    function teste() {}
+    function teste() {
+        s;
+    }
 
     return (
         <S.Container>
