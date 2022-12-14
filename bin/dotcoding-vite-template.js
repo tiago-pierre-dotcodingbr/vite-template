@@ -49,6 +49,7 @@ async function main() {
         execSync('npx rimraf ./bin');
         execSync('npx rimraf ./.github/workflows');
         console.log('Preparando projeto...');
+        execSync('git init');
         execSync('yarn prepare');
 
         console.log('Projeto criado com sucesso, está pronto para usar!');
