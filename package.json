@@ -10,6 +10,7 @@
         "lint": "eslint --fix --ext .tsx .",
         "prepare": "husky install"
     },
+    "bin": "./bin/dotcoding-vite-template.js",
     "husky": {
         "hooks": {
             "pre-commit": "lint-staged"
