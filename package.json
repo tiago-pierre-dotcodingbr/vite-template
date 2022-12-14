@@ -2,7 +2,6 @@
     "name": "dotcoding-template-reactjs",
     "private": true,
     "version": "1.0.0",
-    "type": "module",
     "license": "UNLICENSED",
     "scripts": {
         "dev": "vite",
