@@ -1,6 +1,6 @@
 {
     "name": "dotcoding-react",
-    "version": "1.0.0",
+    "version": "1.0.2",
     "license": "UNLICENSED",
     "scripts": {
         "dev": "vite",
@@ -32,7 +32,7 @@
         "redux-actions": "^2.6.5",
         "redux-persist": "^6.0.0",
         "redux-thunk": "^2.4.2",
-        "sort-by": "^1.2.0",
+        "sort-by": "^0.0.2",
         "styled-components": "^5.3.6"
     },
     "devDependencies": {

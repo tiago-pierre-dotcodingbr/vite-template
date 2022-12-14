@@ -23,7 +23,7 @@ if (projectName !== '.') {
         if (err.code === 'EEXIST') {
             console.log(projectName);
             console.log(
-                `O arquivo ${projectName} já existe no diretório atual, dê outro nome.`
+                `O arquivo ${projectName} já existe no diretório atual, escolha outro nome.`
             );
         } else {
             console.log(err);
@@ -42,15 +42,18 @@ async function main() {
         }
 
         console.log('Instalando dependências...');
-        execSync('yarn install');
+        execSync('npm install');
+        console.log('Atualizando as dependências...');
+        execSync('npm update');
 
         console.log('Removendo arquivos inúteis...');
         execSync('npx rimraf ./.git');
         execSync('npx rimraf ./bin');
         execSync('npx rimraf ./.github/workflows');
+        execSync(`npx change-package-name ${projectName}`);
         console.log('Preparando projeto...');
         execSync('git init');
-        execSync('yarn prepare');
+        execSync('npm run prepare');
 
         console.log('Projeto criado com sucesso, está pronto para usar!');
     } catch (error) {
