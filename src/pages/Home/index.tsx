@@ -12,9 +12,6 @@ import { RootState } from '../../store';
 export function Home() {
     const user = useSelector((state: RootState) => state.user.user);
 
-    function teste() {}
-    a;
-
     return (
         <S.Container>
             <S.Logo src={logo} />
